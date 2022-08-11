@@ -1,0 +1,17 @@
+{
+    "name": "msucevan/swapi",
+    "description": "Populate a MySQL database with all the people and the details about their related planet",
+    "autoload": {
+        "psr-4": {
+            "Msucevan\\Swapi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marius Sucevan",
+            "email": "marius.sucevan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
