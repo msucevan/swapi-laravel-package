@@ -22,7 +22,7 @@ class PersonController extends Controller
         if ($request->has('sort')) {
             $people = Person::orderBy($request->input('sort'))->paginate();
             $people->appends(['sort' => $request->input('sort')]);
-        } else if ($request->has('name') || $request->has('gender') || $request->has('skincolor') ||  $request->has('eyecolor')) {
+        } else if ($request->has('name') || $request->has('gender') || $request->has('skin_color') ||  $request->has('eye_color')) {
             
             if ($request->has('name')) {
                 $people = Person::where('name', 'like', '%' . $request->name . '%')->paginate();
@@ -34,13 +34,13 @@ class PersonController extends Controller
                 $people->appends(['gender' => $request->input('gender')]);
             }
 
-            if ($request->has('skincolor')) {
-                $people = Person::where('skin_color','like', '%' . $request->skincolor . '%')->paginate();
-                $people->appends(['skincolor' => $request->input('skincolor')]);
+            if ($request->has('skin_color')) {
+                $people = Person::where('skin_color','like', '%' . $request->skin_color . '%')->paginate();
+                $people->appends(['skin_color' => $request->input('skin_color')]);
             }
-            if ($request->has('eyecolor')) {
-                $people = Person::where('eyecolor','like', '%' . $request->eyecolor . '%')->paginate();
-                $people->appends(['eyecolor' => $request->input('eyecolor')]);
+            if ($request->has('eye_color')) {
+                $people = Person::where('eye_color','like', '%' . $request->eye_color . '%')->paginate();
+                $people->appends(['eye_color' => $request->input('eye_color')]);
             }
         }
         return $people;
